@@ -1,6 +1,15 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import axios from 'axios';
 import { useState } from 'react';
+
+const { width, height } = Dimensions.get('window');
 
 function MainScreen() {
   const [imageUrl, setImageUrl] = useState('');
@@ -39,8 +48,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: '80%',
-    aspectRatio: 1,
+    width: width * 0.8,
+    height: height * 0.4,
     borderRadius: 10,
     marginTop: 150,
   },
